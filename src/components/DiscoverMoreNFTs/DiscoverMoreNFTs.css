@@ -95,63 +95,68 @@
   font-weight: 600;
 }
 
-/* ========== RESPONSIVE QUERIES ========== */
-
-/* Tablet (≤1024px) */
-@media (max-width: 1024px) {
-  .discover-header {
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-  }
-
-  .nft-card {
-    width: 45%; /* 2 per row */
-  }
-
-  .discover-header h2 {
-    font-size: 24px;
-  }
+/* Hide/Show button depending on screen size */
+.desktop-only {
+  display: flex;
+}
+.mobile-only {
+  display: none;
 }
 
 /* Mobile (≤768px) */
 @media (max-width: 768px) {
   .discover-section {
-    padding: 24px 16px;
+    padding: 40px 20px 60px;
   }
 
   .discover-header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .nft-card {
     width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 
-  .view-all-btn {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
-  .nft-image {
-    aspect-ratio: 16/12; /* thoda chhota */
-  }
-}
-
-/* Small Mobile (≤480px) */
-@media (max-width: 480px) {
   .discover-header h2 {
-    font-size: 20px;
+    font-size: 24px;
+  }
+
+  .nft-grid {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
 
   .nft-card {
-    max-width: 300px;
+    width: 280px; /* ✅ thoda chota size */
+    height: auto;
   }
 
   .nft-image {
-    aspect-ratio: 16/11;
+    height: 200px; /* ✅ chota image height */
+  }
+
+  .nft-info {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .nft-artist img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nft-stats {
+    font-size: 12px;
+  }
+
+  .desktop-only {
+    display: none; /* ✅ hide desktop button */
+  }
+  .mobile-only {
+    display: flex; /* ✅ show mobile button */
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+    height: 50px;
   }
 }

@@ -30,6 +30,7 @@
   color: #fff;
   font-weight: 600;
   font-size: 18px;
+  white-space: nowrap;
 }
 
 /* Desktop Menu */
@@ -149,12 +150,31 @@
   justify-content: center;
 }
 
-/* Responsive */
+/* ✅ Responsive Fixes */
 @media (max-width: 768px) {
-  .desktop-menu {
-    display: none;
+  .nav-inner {
+    height: 54px; /* Figma size */
+    padding: 15px 30px; /* match mobile spacing */
   }
+
+  .brand-wrap {
+    gap: 8px;
+  }
+
+  .logo {
+    width: 24px; /* smaller logo on mobile */
+    height: 24px;
+  }
+
+  .brand {
+    font-size: 15px; /* smaller font */
+  }
+
+  .desktop-menu {
+    display: none; /* hide desktop menu */
+  }
+
   .hamburger-btn {
-    display: flex;
+    display: flex; /* show hamburger */
   }
 }

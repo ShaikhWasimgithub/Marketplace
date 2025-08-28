@@ -15,7 +15,7 @@
   align-items: flex-start;
   gap: 10px;
   width: 100%;
-  max-width: 1046px;
+  max-width: 1050px;
 }
 
 .trending-title {
@@ -33,31 +33,25 @@
   font-weight: 400;
   font-size: 22px;
   line-height: 160%;
-  text-transform: capitalize;
   color: #fff;
   margin: 0;
 }
 
+/* ✅ Desktop: 3 cards */
 .collection-row {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   width: 100%;
   max-width: 1050px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  scrollbar-width: thin;
 }
 
 .collection-card {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  width: 330px;
-  height: 525px;
   background: #2b2b2b;
   border-radius: 20px;
-  flex: none;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
   transition: transform 0.3s ease;
 }
@@ -73,8 +67,7 @@
 }
 
 .primary {
-  width: 330px;
-  height: 330px;
+  width: 100%;
   border-radius: 20px;
   object-fit: cover;
 }
@@ -86,15 +79,13 @@
 }
 
 .secondary-row img {
-  width: 100px;
-  height: 100px;
+  flex: 1;
   border-radius: 20px;
   object-fit: cover;
 }
 
 .count {
-  width: 100px;
-  height: 100px;
+  flex: 1;
   background: #a259ff;
   border-radius: 20px;
   display: flex;
@@ -102,7 +93,7 @@
   align-items: center;
   font-family: "Space Mono", monospace;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 16px;
   color: #fff;
 }
 
@@ -141,6 +132,7 @@
   color: #fff;
 }
 
+/* ✅ Tablet: 2 cards */
 @media (max-width: 1024px) {
   .trending {
     padding: 60px 20px;
@@ -161,28 +153,12 @@
   }
 
   .collection-row {
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    justify-content: center;
-  }
-
-  .collection-card {
-    width: 280px;
-    height: auto;
-  }
-
-  .primary {
-    width: 100%;
-    height: auto;
-  }
-
-  .secondary-row img,
-  .count {
-    width: 80px;
-    height: 80px;
   }
 }
 
-/* Mobile */
+/* Mobile: Only 1 card */
 @media (max-width: 600px) {
   .trending {
     padding: 40px 10px;
@@ -199,19 +175,14 @@
   }
 
   .collection-row {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
   .collection-card {
     width: 100%;
-    max-width: 350px;
-  }
-
-  .primary {
-    width: 100%;
-    height: auto;
+    max-width: 340px;
+    margin: 0 auto;
   }
 
   .secondary-row {
@@ -220,7 +191,7 @@
 
   .secondary-row img,
   .count {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
   }
 }

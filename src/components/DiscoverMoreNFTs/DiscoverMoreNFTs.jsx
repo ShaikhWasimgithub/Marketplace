@@ -30,12 +30,12 @@ export default function DiscoverMoreNFTs() {
     <section className="discover-section">
       <div className="discover-header">
         <h2>Discover More NFTs</h2>
-        <button className="view-all-btn">
+        {/* Button desktop ke liye yahi pe dikhayenge */}
+        <button className="view-all-btn desktop-only">
           <img src="/icons/eye.png" alt="eye" />
           View All
         </button>
       </div>
-
       <div className="nft-grid">
         {nfts.map((nft) => (
           <div className="nft-card" key={nft.id}>
@@ -60,6 +60,11 @@ export default function DiscoverMoreNFTs() {
           </div>
         ))}
       </div>
+
+      <button className="view-all-btn mobile-only">
+        <img src="/icons/eye.png" alt="eye" />
+        View All
+      </button>
     </section>
   );
 }

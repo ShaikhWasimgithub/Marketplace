@@ -34,3 +34,25 @@
     object-fit: cover;
   }
 }
+@media (max-width: 1024px) {
+  .highlight {
+    height: 500px;
+    margin: 40px 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .highlight {
+    height: auto; /* ✅ height image par depend karegi */
+    margin: 30px 0;
+    border-radius: 12px;
+  }
+
+  .highlight-image {
+    width: 100%;
+    height: auto; /*  aspect ratio maintain */
+    object-fit: contain; /*  image stretch nahi hogi */
+    border-radius: 12px;
+  }
+}
