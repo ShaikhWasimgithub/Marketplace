@@ -1,58 +1,250 @@
-.highlight {
+.nft-highlight-container {
   position: relative;
   width: 100%;
-  height: 600px; /* adjust according to design */
+  max-width: 1280px;
+  height: 640px;
+  margin: 60px auto;
   border-radius: 20px;
   overflow: hidden;
-  margin: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.highlight-image {
+.nft-highlight-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: 0;
+}
+
+.highlight-bg-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 20px;
 }
 
+.highlight-bg-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Main Content: info + timer */
+.nft-highlight-content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  padding: 0 90px 60px 90px;
+}
+
+.highlight-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  width: 755px;
+  min-width: 300px;
+}
+
+.highlight-artist-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #3b3b3b;
+  border-radius: 20px;
+  padding: 10px 20px;
+  gap: 12px;
+}
+
+.artist-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 120px;
+  object-fit: cover;
+}
+
+.artist-name {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+}
+
+.highlight-title {
+  font-family: "Work Sans", sans-serif;
+  font-size: 51px;
+  font-weight: 600;
+  line-height: 110%;
+  color: #fff;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.highlight-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 50px;
+  background: #fff;
+  border: none;
+  border-radius: 20px;
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2b2b2b;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.highlight-btn .btn-icon {
+  width: 20px;
+  height: 20px;
+  color: #a259ff;
+}
+
+/* Timer Card */
+.highlight-timer-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background: rgba(59, 59, 59, 0.5);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 295px;
+  height: 144px;
+  gap: 10px;
+}
+
+.timer-label {
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.timer-values {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  width: 235px;
+}
+
+.timer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  width: 53px;
+}
+
+.timer-box h3 {
+  font-family: "Space Mono", monospace;
+  font-size: 38px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 120%;
+  margin: 0;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.timer-box span {
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.timer-colon {
+  font-family: "Space Mono", monospace;
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700;
+  align-self: center;
+  margin-top: 7px;
+}
+
+/* Responsive Styles */
 @media (max-width: 1024px) {
-  .highlight {
+  .nft-highlight-container {
     height: 500px;
     margin: 40px 0;
+    max-width: 98vw;
+  }
+  .nft-highlight-content {
+    padding: 0 30px 30px 30px;
+  }
+  .highlight-left {
+    width: 60vw;
+    min-width: 220px;
+  }
+  .highlight-timer-card {
+    width: 230px;
+    height: 120px;
+    padding: 24px;
   }
 }
 
-/*  Mobile (max-width: 600px) */
 @media (max-width: 600px) {
-  .highlight {
-    height: 280px; /* smaller height for mobile */
+  .nft-highlight-container {
+    height: 280px;
+    border-radius: 12px;
     margin: 30px 0;
+  }
+  .nft-highlight-bg img,
+  .highlight-bg-gradient {
     border-radius: 12px;
   }
-
-  .highlight-image {
-    border-radius: 12px;
-    object-fit: cover;
+  .nft-highlight-content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    height: 100%;
   }
-}
-@media (max-width: 1024px) {
-  .highlight {
-    height: 500px;
-    margin: 40px 0;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .highlight {
-    height: auto; /* ✅ height image par depend karegi */
-    margin: 30px 0;
-    border-radius: 12px;
-  }
-
-  .highlight-image {
+  .highlight-left {
     width: 100%;
-    height: auto; /*  aspect ratio maintain */
-    object-fit: contain; /*  image stretch nahi hogi */
-    border-radius: 12px;
+    gap: 16px;
+  }
+  .highlight-title {
+    font-size: 28px;
+  }
+  .highlight-btn {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+  .highlight-timer-card {
+    margin-top: 16px;
+    width: 180px;
+    height: 88px;
+    padding: 14px;
+  }
+  .timer-values {
+    width: 100%;
+    gap: 5px;
+  }
+  .timer-box h3 {
+    font-size: 22px;
+  }
+  .timer-colon {
+    font-size: 16px;
+    margin-top: 2px;
   }
 }
