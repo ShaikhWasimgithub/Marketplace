@@ -5,8 +5,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 20px;
-  gap: 40px;
+  padding: 80px 0; /* Figma exact */
+  gap: 60px; /* Figma gap */
   background: #2b2b2b;
   width: 100%;
 }
@@ -14,14 +14,15 @@
 /* Heading */
 .browse-header {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1050px;
+  margin: 0; /* as per Figma */
 }
 
 .browse-header h3 {
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
-  font-size: 36px;
-  line-height: 140%;
+  font-size: 38px; /* Figma: 38px */
+  line-height: 120%;
   text-transform: capitalize;
   color: #ffffff;
   margin: 0;
@@ -32,9 +33,11 @@
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  gap: 30px; /* Figma gap */
   width: 100%;
-  max-width: 1200px;
+  max-width: 1050px;
+  justify-content: center;
+  /* matches Figma container */
 }
 
 /* Category Card */
@@ -44,8 +47,8 @@
   background: #3b3b3b;
   border-radius: 20px;
   overflow: hidden;
-  width: 100%;
-  height: auto;
+  width: 240px; /* fixed as per Figma */
+  height: 316px; /* fixed as per Figma */
   transition: transform 0.2s ease-in-out;
 }
 
@@ -55,8 +58,8 @@
 
 /* Image section */
 .category-image {
-  width: 100%;
-  aspect-ratio: 1/1; /* keeps square */
+  width: 240px;
+  height: 240px; /* exact Figma */
   background-size: cover;
   background-position: center;
   border-radius: 20px 20px 0 0;
@@ -68,7 +71,7 @@
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(15px); /* updated Figma exact */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,8 +80,8 @@
 
 /* Icon inside overlay */
 .category-icon {
-  width: 60px;
-  height: 60px;
+  width: 100px; /* Figma: 100px */
+  height: 100px;
   object-fit: contain;
 }
 
@@ -93,51 +96,93 @@
   color: #ffffff;
   text-align: left;
 }
-
-/* ================= RESPONSIVE ================= */
-
-/* Laptop/Tablet */
-@media (max-width: 992px) {
+/* Mobile (Figma specs) */
+@media (max-width: 576px) {
   .browse-section {
-    padding: 50px 15px;
-    gap: 30px;
+    padding: 40px 0;
+    gap: 40px;
+    background: #2b2b2b;
+  }
+
+  /* Heading container */
+  .browse-header {
+    max-width: 315px;
+    width: 100%;
+    margin: 0 auto; /* center block */
+    padding: 0; /* no extra padding */
   }
 
   .browse-header h3 {
     font-size: 28px;
+    line-height: 140%;
+    font-weight: 600;
+    font-family: "Work Sans", sans-serif;
+    color: #fff;
+    text-align: left;
+    margin: 0;
   }
 
+  /* Grid wrapper */
   .categories-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-  }
-}
 
-/* Mobile */
-@media (max-width: 576px) {
-  .browse-section {
-    padding: 40px 12px;
-    gap: 25px;
+    max-width: 315px; /* Figma frame */
+    width: 100%;
+    margin: 0 auto; /* center whole grid */
   }
 
-  .browse-header h3 {
-    font-size: 22px;
-    text-align: center;
+  /* Category Card */
+  .category-card {
+    width: 147.5px;
+    height: 209px;
+    background: #3b3b3b;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
 
-  .categories-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+  /* Card image */
+  .category-image {
+    width: 147.5px;
+    height: 142px;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+  }
+
+  /* Blur overlay with icon */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(7.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
 
   .category-icon {
-    width: 45px;
-    height: 45px;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
   }
 
+  /* Card name */
   .category-name {
-    font-size: 14px;
-    padding: 12px;
-    text-align: center;
+    padding: 20px 20px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Work Sans", sans-serif;
+    line-height: 140%;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: left;
   }
 }

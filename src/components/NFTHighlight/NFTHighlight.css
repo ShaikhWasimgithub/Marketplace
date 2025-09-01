@@ -1,48 +1,46 @@
-/* Full-bleed hero section */
+/* ================================
+   Full-Bleed Hero Section
+================================== */
 .nft-hero {
-  width: 100vw;
+  width: 100vw; /* full viewport width */
+  min-height: 640px; /* figma height */
   position: relative;
   left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  min-height: 640px; /* Increased to show more of the image */
+  margin-left: -50vw; /* pull out from container restriction */
   display: flex;
   align-items: flex-end;
   overflow: hidden;
   isolation: isolate;
 }
 
-/* Background image - fixed to show full image */
+/* Background Image */
 .hero-bg-image {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background: url("/assets/mushrooms-bg.png") center/cover no-repeat;
   z-index: 1;
 }
 
-/* Gradient overlay - matching Figma design */
+/* Gradient Overlay */
 .hero-gradient-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #a259ff 100%);
   z-index: 2;
 }
 
-/* Content container */
+/* ================================
+   Content Container
+================================== */
 .hero-content {
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1280px; /* center content inside */
   margin: 0 auto;
-  padding: 80px 40px 60px; /* More top padding to center content vertically */
+  padding: 0 60px 60px; /* side gap + bottom gap */
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -50,13 +48,14 @@
   min-height: 640px;
 }
 
-/* Left side */
+/* ================================
+   Left Side (Artist + Title + Btn)
+================================== */
 .highlight-left {
   display: flex;
   flex-direction: column;
   gap: 30px;
   max-width: 600px;
-  margin-bottom: 40px;
 }
 
 /* Artist Card */
@@ -68,7 +67,6 @@
   padding: 10px 20px;
   border-radius: 20px;
   width: fit-content;
-  box-shadow: none;
 }
 .artist-avatar {
   width: 24px;
@@ -94,7 +92,7 @@
   text-transform: capitalize;
 }
 
-/* Button */
+/* CTA Button */
 .highlight-btn {
   display: flex;
   align-items: center;
@@ -111,6 +109,10 @@
   width: fit-content;
   transition: all 0.3s ease;
 }
+.highlight-btn .btn-icon {
+  color: #a259ff;
+  font-size: 20px;
+}
 .highlight-btn:hover {
   background: #f0f0f0;
   transform: translateY(-2px);
@@ -119,12 +121,10 @@
   outline: 2px solid #a259ff;
   outline-offset: 2px;
 }
-.highlight-btn .btn-icon {
-  color: #a259ff;
-  font-size: 20px;
-}
 
-/* Timer */
+/* ================================
+   Right Side (Timer Box)
+================================== */
 .highlight-timer {
   display: flex;
   flex-direction: column;
@@ -135,22 +135,20 @@
   padding: 30px;
   width: 295px;
   height: 144px;
-  margin-bottom: 40px;
 }
 .timer-label {
   font-family: "Space Mono", monospace;
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 110%;
-  color: #ffffff;
+  color: #fff;
   margin: 0 0 10px 0;
 }
 .timer-values {
   display: flex;
-  gap: 10px;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   width: 100%;
 }
 .timer-box {
@@ -161,30 +159,25 @@
 }
 .time-value {
   font-family: "Space Mono", monospace;
-  font-style: normal;
   font-weight: 700;
   font-size: 38px;
   line-height: 120%;
-  text-transform: capitalize;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 5px;
 }
 .time-label {
   font-family: "Space Mono", monospace;
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 110%;
-  color: #ffffff;
+  color: #fff;
 }
 .timer-colon {
   font-family: "Space Mono", monospace;
-  font-style: normal;
   font-weight: 700;
   font-size: 28px;
   line-height: 140%;
-  text-transform: capitalize;
-  color: #ffffff;
+  color: #fff;
   margin-bottom: 15px;
 }
 

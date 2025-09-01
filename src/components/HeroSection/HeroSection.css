@@ -271,120 +271,118 @@
   font-size: 16px;
   color: var(--text);
 }
-
-@media (max-width: 1024px) {
-  .hero {
-    padding: 60px 40px;
-  }
-  .hero__frame {
-    width: 100%;
-    gap: 40px;
-  }
-  .hero__left {
-    width: 100%;
-  }
-  .hero__card {
-    width: 100%;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero__title {
-    font-size: 48px;
-  }
-  .hero__subtitle {
-    font-size: 18px;
-  }
-  .hero__stats {
-    justify-content: center;
-  }
-}
-
 @media (max-width: 600px) {
   .hero {
     padding: 40px 0;
+    background: #2b2b2b;
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .hero__frame {
-    width: 375px;
+    width: 375px; /* Mobile frame */
     max-width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 30px; /* Space between main blocks */
     align-items: center;
-    gap: 30px;
   }
 
   .hero__left {
-    display: contents;
+    display: contents; /* Remove extra wrapper */
   }
 
-  .hero__textblock,
-  .hero__cta,
-  .hero__stats,
-  .hero__card {
-    width: 315px;
-    max-width: 315px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+  /* 1. Title + Subtitle */
   .hero__textblock {
     order: 1;
+    width: 315px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
   }
 
   .hero__title {
     font-size: 28px;
     line-height: 140%;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
   }
+
   .hero__subtitle {
     font-size: 16px;
     line-height: 140%;
+    font-weight: 400;
+    color: #fff;
+    margin: 0;
   }
 
+  /* 2. NFT Card */
   .hero__card {
     order: 2;
+    width: 315px;
     border-radius: 20px;
     overflow: hidden;
-    width: 315px;
+    background: #3b3b3b;
   }
 
   .hero__imageWrap {
+    width: 100%;
     height: 206px;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
   }
 
   .hero__info {
-    background: var(--bg-2);
     padding: 20px;
+    background: #3b3b3b;
     border-radius: 0 0 20px 20px;
   }
 
+  /* 3. CTA Button */
   .hero__cta {
     order: 3;
     width: 315px;
     height: 60px;
+    background: #a259ff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: #fff;
     font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
   }
 
+  /* 4. Stats */
   .hero__stats {
     order: 4;
     width: 315px;
     display: flex;
     justify-content: space-between;
-    gap: 0;
   }
+
   .hero__stat {
     width: 85px;
+    text-align: left;
   }
+
   .hero__statValue {
     font-size: 22px;
+    font-weight: 700;
     line-height: 160%;
+    color: #fff;
   }
+
   .hero__statLabel {
     font-size: 16px;
+    font-weight: 400;
     line-height: 140%;
+    color: #fff;
   }
 }

@@ -5,7 +5,7 @@ const steps = [
   {
     id: 1,
     title: "Setup Your wallet",
-    desc: "Set up your wallet of choice. Connect it to the NFT market by clicking the wallet icon in the top right corner.",
+    desc: "Set up your wallet of choice. Connect it to the Animarket by clicking the wallet icon in the top right corner.",
     img: "/assets/icons/wallet.png",
   },
   {
@@ -17,7 +17,7 @@ const steps = [
   {
     id: 3,
     title: "Start Earning",
-    desc: "Choose between auctions and fixed-price listings. Start earning by selling your NFTs.",
+    desc: "Choose between auctions and fixed-price listings. Start earning by selling your NFTs or trading others.",
     img: "/assets/icons/earn.png",
   },
 ];
