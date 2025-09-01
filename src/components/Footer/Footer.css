@@ -2,46 +2,72 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 160px; /* reduced top padding from 40px → 30px */
-  gap: 25px;
+  padding: 40px 195px;
+  gap: 30px;
   width: 100%;
   background: #3b3b3b;
 }
 
+/* Top Section Layout */
 .footer-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 24px;
+  gap: 31px;
   width: 100%;
-  max-width: 1000px; /* keeps neat on large screens */
+  /* max-width: 1050px; */
 }
 
+/* Columns */
 .footer-col {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   color: #cccccc;
 }
 
 .footer-logo {
-  width: 200px; /* was 220px or 243px → now exact smaller */
-  height: auto;
+  width: 243px;
+  height: 32px;
   object-fit: contain;
 }
 
 .footer-text {
   font-family: "Work Sans", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 140%;
   color: #cccccc;
 }
 
+.footer-community {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.footer-icons img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-icons img:hover {
+  opacity: 0.7;
+}
+
+/* Explore */
 .footer-title {
   font-family: "Space Mono", monospace;
   font-weight: 700;
-  font-size: 18px; /* was 20px → proper size */
-  line-height: 140%;
+  font-size: 22px;
+  line-height: 160%;
   color: #ffffff;
   text-transform: capitalize;
 }
@@ -49,7 +75,7 @@
 .footer-links {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -57,7 +83,7 @@
 
 .footer-links li {
   font-family: "Work Sans", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 140%;
   color: #cccccc;
   cursor: pointer;
@@ -68,16 +94,16 @@
   color: #ffffff;
 }
 
-/* ---- Subscribe Form ---- */
+/* Subscribe Form */
 .footer-form {
   display: flex;
   align-items: center;
   background: #ffffff;
-  border-radius: 15px;
-  padding: 12px 0px 12px 18px;
-  gap: 10px;
-  width: 380px;
-  height: 54px;
+  border-radius: 20px;
+  padding: 16px 0px 16px 20px;
+  gap: 12px;
+  width: 420px;
+  height: 60px;
 }
 
 .footer-input {
@@ -85,23 +111,23 @@
   outline: none;
   flex-grow: 1;
   font-family: "Work Sans", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   color: #2b2b2b;
 }
 
 .footer-button {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 0px 25px;
-  height: 54px;
+  gap: 12px;
+  padding: 0px 30px;
+  height: 60px;
   background: #a259ff;
-  border-radius: 15px;
+  border-radius: 20px;
   border: none;
   color: #ffffff;
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -110,21 +136,28 @@
   background: #9225ff;
 }
 
-.footer-divider {
-  width: 100%;
-  border: 1px solid #858584;
-  margin-top: 15px;
+.footer-mail-icon {
+  width: 20px;
+  height: 20px;
 }
 
+/* Divider */
+.footer-divider {
+  width: 100%;
+  /* max-width: 1050px; */
+  border: 1px solid #858584;
+}
+
+/* Bottom */
 .footer-copy {
   font-family: "Work Sans", sans-serif;
   font-size: 12px;
   line-height: 110%;
   color: #cccccc;
-  text-align: left; /* was center → fixed */
+  text-align: left;
   width: 100%;
-  max-width: 1000px;
-  margin-top: 8px;
+  max-width: 1050px;
+  align-self: flex-start;
 }
 
 /* ====== RESPONSIVE ====== */
@@ -152,20 +185,35 @@
     height: auto;
     padding: 0;
     background: none;
+    gap: 10px;
   }
 
   .footer-input {
     width: 100%;
     background: #fff;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 14px; /* smaller text */
+    line-height: 1.4;
+  }
+
+  /* placeholder style */
+  .footer-input::placeholder {
+    font-size: 14px;
+    color: #999;
+    text-align: left;
   }
 
   .footer-button {
     width: 100%;
-    margin-top: 10px;
-    border-radius: 10px;
-    height: 48px;
+    height: 46px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center; /* vertical centering */
+    justify-content: center; /* horizontal centering */
+    margin-top: 5px;
   }
 
   .footer-copy {

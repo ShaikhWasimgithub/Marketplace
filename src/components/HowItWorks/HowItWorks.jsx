@@ -26,16 +26,20 @@ const HowItWorks = () => {
   return (
     <section className="how-it-works">
       <div className="how-header">
-        <h3>How It Works</h3>
-        <p>Find Out How To Get Started</p>
+        <h3>How it works</h3>
+        <p>Find out how to get started</p>
       </div>
 
       <div className="how-cards">
         {steps.map((step) => (
           <div className="how-card" key={step.id}>
-            <img src={step.img} alt={step.title} className="how-icon" />
-            <h4>{step.title}</h4>
-            <p>{step.desc}</p>
+            <div className="card-icon">
+              <img src={step.img} alt={step.title} className="how-icon" />
+            </div>
+            <div className="card-details">
+              <h4>{step.title}</h4>
+              <p>{step.desc}</p>
+            </div>
           </div>
         ))}
       </div>

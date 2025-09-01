@@ -44,6 +44,7 @@
   gap: 30px;
   width: 100%;
   max-width: 1050px;
+  overflow: hidden; /* Remove scrollbars */
 }
 
 .collection-card {
@@ -52,7 +53,7 @@
   gap: 15px;
   background: #2b2b2b;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  /* Removed box-shadow from entire card */
   transition: transform 0.3s ease;
 }
 
@@ -68,8 +69,11 @@
 
 .primary {
   width: 100%;
+  height: 330px;
   border-radius: 20px;
   object-fit: cover;
+  /* Added shadow only to primary image */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .secondary-row {
@@ -79,13 +83,17 @@
 }
 
 .secondary-row img {
-  flex: 1;
+  width: 100px;
+  height: 100px;
   border-radius: 20px;
   object-fit: cover;
+  /* Added shadow to secondary images */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .count {
-  flex: 1;
+  width: 100px;
+  height: 100px;
   background: #a259ff;
   border-radius: 20px;
   display: flex;
@@ -93,8 +101,10 @@
   align-items: center;
   font-family: "Space Mono", monospace;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 22px;
   color: #fff;
+  /* Added shadow to count box */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
 }
 
 .info {
@@ -131,67 +141,119 @@
   font-size: 16px;
   color: #fff;
 }
-
-/* ✅ Tablet: 2 cards */
-@media (max-width: 1024px) {
+/* Mobile: 1 card exact Figma */
+@media (max-width: 600px) {
   .trending {
-    padding: 60px 20px;
+    padding: 40px 0;
     gap: 40px;
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    height: auto;
   }
 
   .trending-headline {
-    align-items: center;
-    text-align: center;
-  }
-
-  .trending-title {
-    font-size: 32px;
-  }
-
-  .trending-sub {
-    font-size: 18px;
-  }
-
-  .collection-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-}
-
-/* Mobile: Only 1 card */
-@media (max-width: 600px) {
-  .trending {
-    padding: 40px 10px;
-    gap: 30px;
-  }
-
-  .trending-title {
-    font-size: 24px;
-    line-height: 130%;
-  }
-
-  .trending-sub {
-    font-size: 16px;
-  }
-
-  .collection-row {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .collection-card {
-    width: 100%;
-    max-width: 340px;
+    width: 315px;
+    height: 93px;
+    gap: 10px;
     margin: 0 auto;
   }
 
-  .secondary-row {
-    justify-content: center;
+  .trending-title {
+    width: 315px;
+    height: 39px;
+    font-size: 28px;
+    line-height: 140%;
   }
 
-  .secondary-row img,
+  .trending-sub {
+    width: 315px;
+    height: 44px;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .collection-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 315px;
+    height: 505px;
+    gap: 0;
+    overflow: visible;
+  }
+
+  .collection-card {
+    width: 315px;
+    height: 505px;
+    gap: 15px;
+    box-shadow: none;
+  }
+
+  .collection-card:nth-child(n + 2) {
+    display: none;
+  }
+
+  .photos {
+    width: 315px;
+    height: 425px;
+    gap: 15px;
+  }
+
+  .primary {
+    width: 315px;
+    height: 315px;
+    border-radius: 20px;
+  }
+
+  .secondary-row {
+    width: 315px;
+    height: 95px;
+    gap: 15px;
+  }
+
+  .secondary-row img {
+    width: 95px;
+    height: 95px;
+    flex: none;
+  }
+
   .count {
-    width: 80px;
-    height: 80px;
+    width: 95px;
+    height: 95px;
+    flex: none;
+    font-size: 16px;
+    padding: 0;
+  }
+
+  .info {
+    width: 315px;
+    height: 65px;
+    gap: 10px;
+  }
+
+  .info h5 {
+    width: 315px;
+    height: 31px;
+    font-size: 22px;
+    line-height: 140%;
+  }
+
+  .artist {
+    width: 315px;
+    height: 24px;
+    gap: 12px;
+  }
+
+  .artist img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .artist span {
+    width: 279px;
+    height: 22px;
+    font-size: 16px;
+    line-height: 140%;
   }
 }

@@ -37,16 +37,16 @@ export default function TopCreators() {
   return (
     <div className="top-creators-section">
       <div className="top-header">
-        <div>
+        <div className="top-headline">
           <h2>Top Creators</h2>
           <p>Checkout Top Rated Creators On The Nft Marketplace</p>
         </div>
-        <button className="ranking-btn">
+        {/* Button stays here for desktop */}
+        <button className="ranking-btn desktop-only">
           <Rocket size={18} className="rocket-icon" />
           View Rankings
         </button>
       </div>
-
       <div className="creators-grid">
         {creators.map((creator, index) => (
           <div key={creator.id} className="creator-card">
@@ -56,13 +56,22 @@ export default function TopCreators() {
               alt={creator.name}
               className="creator-img"
             />
-            <h3>{creator.name}</h3>
-            <p>
-              Total Sales: <strong>{creator.sales}</strong>
-            </p>
+            <div className="creator-info">
+              <h3>{creator.name}</h3>
+              <div className="creator-sales">
+                <p>
+                  Total Sales: <strong>{creator.sales}</strong>
+                </p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
+      {/* Button for mobile - only visible <600px */}
+      <button className="ranking-btn mobile-only">
+        <Rocket size={18} className="rocket-icon" />
+        View Rankings
+      </button>
     </div>
   );
 }

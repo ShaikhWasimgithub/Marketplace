@@ -127,12 +127,12 @@
   }
 
   .nft-card {
-    width: 280px; /* ✅ thoda chota size */
+    width: 280px; /*  thoda chota size */
     height: auto;
   }
 
   .nft-image {
-    height: 200px; /* ✅ chota image height */
+    height: 200px; /*  chota image height */
   }
 
   .nft-info {
@@ -150,10 +150,10 @@
   }
 
   .desktop-only {
-    display: none; /* ✅ hide desktop button */
+    display: none; /* hide desktop button */
   }
   .mobile-only {
-    display: flex; /* ✅ show mobile button */
+    display: flex; /*  show mobile button */
     width: 100%;
     justify-content: center;
     margin-top: 20px;

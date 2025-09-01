@@ -70,23 +70,18 @@ import { FaEye } from "react-icons/fa";
 
 const NFTHighlight = () => {
   return (
-    <section className="nft-highlight-container">
-      {/* Layered Background */}
-      <div className="nft-highlight-bg">
-        <img
-          src="/assets/mushrooms-bg.png"
-          alt="Magic Mushrooms"
-          className="highlight-bg-img"
-        />
-        <div className="highlight-bg-gradient"></div>
-      </div>
+    <section className="nft-hero" aria-label="Magic Mushrooms NFT Highlight">
+      {/* Background image with eager loading */}
+      <div className="hero-bg-image" aria-hidden="true" role="img"></div>
 
-      {/* Main Content */}
-      <div className="nft-highlight-content">
-        {/* Left: Artist, Title, Button */}
+      {/* Gradient overlay */}
+      <div className="hero-gradient-overlay" aria-hidden="true"></div>
+
+      <div className="hero-content">
+        {/* Left side: Artist + Title + Button */}
         <div className="highlight-left">
           {/* Artist Card */}
-          <div className="highlight-artist-card">
+          <div className="artist-card">
             <img
               src="/assets/avatar.png"
               alt="Dish Studio"
@@ -96,7 +91,7 @@ const NFTHighlight = () => {
           </div>
 
           {/* Title */}
-          <h2 className="highlight-title">Magic Mushrooms</h2>
+          <h1 className="highlight-title">Magic Mushrooms</h1>
 
           {/* Button */}
           <button className="highlight-btn">
@@ -105,23 +100,23 @@ const NFTHighlight = () => {
           </button>
         </div>
 
-        {/* Right: Timer */}
-        <div className="highlight-timer-card">
+        {/* Right side: Timer */}
+        <div className="highlight-timer">
           <p className="timer-label">Auction ends in:</p>
           <div className="timer-values">
             <div className="timer-box">
-              <h3>59</h3>
-              <span>Hours</span>
+              <span className="time-value">59</span>
+              <span className="time-label">Hours</span>
             </div>
             <span className="timer-colon">:</span>
             <div className="timer-box">
-              <h3>59</h3>
-              <span>Minutes</span>
+              <span className="time-value">59</span>
+              <span className="time-label">Minutes</span>
             </div>
             <span className="timer-colon">:</span>
             <div className="timer-box">
-              <h3>59</h3>
-              <span>Seconds</span>
+              <span className="time-value">59</span>
+              <span className="time-label">Seconds</span>
             </div>
           </div>
         </div>

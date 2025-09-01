@@ -4,21 +4,21 @@ import "./DiscoverMoreNFTs.css";
 const nfts = [
   {
     id: 1,
-    title: "Magic Mushroom 0325",
+    title: "Magic Mushroom ",
     artist: "Shroomie",
     image: "../assets/nfts/nft-1.jpg",
     avatar: "../assets/artists/artist-1.jpg",
   },
   {
     id: 2,
-    title: "Happy Robot 024",
+    title: "Happy Robot ",
     artist: "Robotica",
     image: "../assets/nfts/nft-2.jpg",
     avatar: "../assets/artists/artist-2.jpg",
   },
   {
     id: 3,
-    title: "Happy Robot 032",
+    title: "Happy Robot ",
     artist: "BeKind2Robots",
     image: "../assets/nfts/nft-3.jpg",
     avatar: "../assets/artists/artist-3.jpg",
@@ -28,14 +28,20 @@ const nfts = [
 export default function DiscoverMoreNFTs() {
   return (
     <section className="discover-section">
+      {/* Header */}
       <div className="discover-header">
-        <h2>Discover More NFTs</h2>
-        {/* Button desktop ke liye yahi pe dikhayenge */}
+        <div className="header-texts">
+          <h2>Discover More NFTs</h2>
+          <p className="sub-text">Explore new trending NFTs</p>
+        </div>
+        {/* Desktop Button */}
         <button className="view-all-btn desktop-only">
           <img src="/icons/eye.png" alt="eye" />
           View All
         </button>
       </div>
+
+      {/* NFT Cards */}
       <div className="nft-grid">
         {nfts.map((nft) => (
           <div className="nft-card" key={nft.id}>
@@ -61,6 +67,7 @@ export default function DiscoverMoreNFTs() {
         ))}
       </div>
 
+      {/* Mobile Button */}
       <button className="view-all-btn mobile-only">
         <img src="/icons/eye.png" alt="eye" />
         View All

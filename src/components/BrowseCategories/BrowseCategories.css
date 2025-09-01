@@ -1,10 +1,12 @@
+/* ================= BROWSE CATEGORIES ================= */
+
 /* Section wrapper */
 .browse-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 20px;
-  gap: 60px;
+  padding: 60px 20px;
+  gap: 40px;
   background: #2b2b2b;
   width: 100%;
 }
@@ -12,31 +14,30 @@
 /* Heading */
 .browse-header {
   width: 100%;
-  max-width: 1050px;
+  max-width: 1200px;
 }
 
 .browse-header h3 {
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
-  font-size: 38px;
-  line-height: 120%;
+  font-size: 36px;
+  line-height: 140%;
   text-transform: capitalize;
   color: #ffffff;
   margin: 0;
   text-align: left;
 }
 
-/* Grid Centered */
+/* Categories Grid */
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   width: 100%;
-  max-width: 1050px;
-  margin: 0 auto;
+  max-width: 1200px;
 }
 
-/* Card */
+/* Category Card */
 .category-card {
   display: flex;
   flex-direction: column;
@@ -44,30 +45,30 @@
   border-radius: 20px;
   overflow: hidden;
   width: 100%;
-  max-width: 240px;
   height: auto;
-  margin: 0 auto;
+  transition: transform 0.2s ease-in-out;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
 }
 
 /* Image section */
 .category-image {
   width: 100%;
-  aspect-ratio: 1/1; /* square image */
+  aspect-ratio: 1/1; /* keeps square */
   background-size: cover;
   background-position: center;
   border-radius: 20px 20px 0 0;
   position: relative;
 }
 
-/* Blur Overlay */
+/* Overlay */
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,10 +84,10 @@
 
 /* Category name */
 .category-name {
-  padding: 15px 20px;
+  padding: 16px 20px;
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 140%;
   text-transform: capitalize;
   color: #ffffff;
@@ -95,32 +96,48 @@
 
 /* ================= RESPONSIVE ================= */
 
-/* Tablet */
+/* Laptop/Tablet */
 @media (max-width: 992px) {
+  .browse-section {
+    padding: 50px 15px;
+    gap: 30px;
+  }
+
+  .browse-header h3 {
+    font-size: 28px;
+  }
+
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-  }
-
-  .category-card {
-    max-width: 100%;
   }
 }
 
 /* Mobile */
 @media (max-width: 576px) {
-  .categories-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+  .browse-section {
+    padding: 40px 12px;
+    gap: 25px;
   }
 
-  .category-name {
-    font-size: 16px;
-    padding: 12px 15px;
+  .browse-header h3 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .category-icon {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .category-name {
+    font-size: 14px;
+    padding: 12px;
+    text-align: center;
   }
 }

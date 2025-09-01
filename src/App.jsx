@@ -38,7 +38,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./components/layout";
 import Home from "./pages/Home/Home";
 import SignUp from "./pages/SignUp";
-
+import Marketplace from "./pages/Marketplace";
 function Placeholder({ title }) {
   return (
     <main style={{ maxWidth: 1280, margin: "0 auto", padding: "24px 50px" }}>
@@ -52,10 +52,7 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/marketplace"
-          element={<Placeholder title="Marketplace" />}
-        />
+        <Route path="/marketplace" element={<Marketplace />} />
         <Route path="/rankings" element={<Placeholder title="Rankings" />} />
         <Route
           path="/wallet"

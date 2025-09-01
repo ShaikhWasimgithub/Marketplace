@@ -7,84 +7,130 @@
   --radius: 20px;
 }
 
-/* =============== DESKTOP (UNCHANGED) =============== */
+/* =============== HERO SECTION =============== */
 .hero {
   background: var(--bg);
-  padding: 80px 120px;
-}
-.hero__frame {
-  width: 1050px;
-  margin: 0 auto;
+  padding: 80px 195px;
+  box-sizing: border-box;
   display: flex;
-  gap: 30px;
-  align-items: stretch;
+  justify-content: center;
+  align-items: center;
 }
+
+.hero__frame {
+  max-width: 1050px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+/* Left Section (Text + Buttons) */
 .hero__left {
-  width: 500px;
+  width: 510px;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
+
+/* Headline + Subhead container */
+.hero__textblock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Title */
 .hero__title {
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
   font-size: 67px;
-  line-height: 110%;
+  line-height: 110%; /* ~74px */
+  text-transform: capitalize;
   color: var(--text);
   margin: 0;
 }
+
+/* Subtitle */
 .hero__subtitle {
   font-family: "Work Sans", sans-serif;
+  font-weight: 400;
   font-size: 22px;
   line-height: 160%;
+  text-transform: capitalize;
   color: var(--text);
   margin: 0;
 }
+
+/* CTA Button */
 .hero__cta {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   gap: 12px;
-  height: 60px;
+  padding: 0 50px;
   width: 224px;
-  padding: 0 40px;
-  border: 0;
+  height: 60px;
+  border: none;
   border-radius: var(--radius);
   background: var(--cta);
   color: var(--text);
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
   font-size: 16px;
+  line-height: 140%;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .hero__cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(162, 89, 255, 0.4);
 }
+
 .hero__ctaIcon {
   width: 20px;
   height: 20px;
 }
 
+/* Stats Row */
 .hero__stats {
   display: flex;
+  flex-direction: row;
   gap: 30px;
+  margin-top: 0;
 }
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 150px;
+}
+
 .hero__statValue {
   font-family: "Space Mono", monospace;
   font-weight: 700;
   font-size: 28px;
+  line-height: 140%;
+  text-transform: capitalize;
   color: var(--text);
+  margin-bottom: 4px;
 }
+
 .hero__statLabel {
   font-family: "Work Sans", sans-serif;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 160%;
+  text-transform: capitalize;
   color: var(--text);
 }
 
+/* Right Section (NFT Card) */
 .hero__card {
-  width: 480px;
+  width: 510px;
+  height: auto;
   background: var(--bg-2);
   border-radius: var(--radius);
   overflow: hidden;
@@ -92,6 +138,76 @@
   flex-direction: column;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
   animation: float3d 8s ease-in-out infinite;
+}
+
+/* NFT Image */
+.hero__imageWrap {
+  width: 100%;
+  height: 100%;
+  height: 401px;
+
+  overflow: hidden;
+}
+
+.hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* NFT Info */
+.hero__info {
+  width: 100%;
+
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: var(--bg-2);
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-sizing: border-box;
+}
+
+.hero__nftTitle {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 140%;
+  text-transform: capitalize;
+  color: var(--text);
+  margin: 0;
+}
+
+.hero__artistRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero__avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero__artistName {
+  font-family: "Work Sans", sans-serif;
+  font-size: 16px;
+  color: var(--text);
+}
+
+@keyframes float3d {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 @keyframes float3d {
   0% {
@@ -104,21 +220,31 @@
     transform: translateY(0);
   }
 }
+
 .hero__imageWrap {
-  height: 350px;
+  height: auto;
+  max-height: 350px;
   overflow: hidden;
+  aspect-ratio: 4 / 3;
 }
+
 .hero__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
+
 .hero__info {
-  padding: 20px;
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+
+  box-sizing: border-box;
+  background: var(--bg-2);
+  border-radius: 0 0 var(--radius) var(--radius);
 }
+
 .hero__nftTitle {
   font-family: "Work Sans", sans-serif;
   font-size: 22px;
@@ -126,24 +252,26 @@
   margin: 0;
   color: var(--text);
 }
+
 .hero__artistRow {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 .hero__avatar {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   object-fit: cover;
 }
+
 .hero__artistName {
   font-family: "Work Sans", sans-serif;
   font-size: 16px;
   color: var(--text);
 }
 
-/* =============== RESPONSSIVE=============== */
 @media (max-width: 1024px) {
   .hero {
     padding: 60px 40px;
@@ -173,12 +301,10 @@
 }
 
 @media (max-width: 600px) {
-  /* outer section spacing per figma: 40px top/bottom, full-bleed bg */
   .hero {
     padding: 40px 0;
   }
 
-  /* container width 375, inner content 315, gap 30 */
   .hero__frame {
     width: 375px;
     max-width: 100%;
@@ -193,7 +319,6 @@
     display: contents;
   }
 
-  /* order = 1 : Headline + Subhead (width 315) */
   .hero__textblock,
   .hero__cta,
   .hero__stats,
@@ -203,6 +328,7 @@
     margin-left: auto;
     margin-right: auto;
   }
+
   .hero__textblock {
     order: 1;
     display: flex;
@@ -210,7 +336,6 @@
     gap: 10px;
   }
 
-  /* typography exact to figma */
   .hero__title {
     font-size: 28px;
     line-height: 140%;
@@ -220,24 +345,23 @@
     line-height: 140%;
   }
 
-  /* order = 2 : Highlighted NFT card */
   .hero__card {
     order: 2;
     border-radius: 20px;
     overflow: hidden;
     width: 315px;
   }
+
   .hero__imageWrap {
     height: 206px;
-  } /* figma image height */
+  }
+
   .hero__info {
     background: var(--bg-2);
     padding: 20px;
     border-radius: 0 0 20px 20px;
-    gap: 10px;
   }
 
-  /* order = 3 : CTA (full width 315 x 60) */
   .hero__cta {
     order: 3;
     width: 315px;
@@ -245,7 +369,6 @@
     font-size: 16px;
   }
 
-  /* order = 4 : Additional Info (stats) */
   .hero__stats {
     order: 4;
     width: 315px;

@@ -1,0 +1,73 @@
+.marketplace-section {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /*  left align */
+  color: #fff;
+}
+
+.marketplace-header {
+  text-align: left; /*  left aligned */
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.marketplace-header h1 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.marketplace-header p {
+  font-size: 20px;
+  color: #ccc;
+}
+
+.marketplace-header p span {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* 🔎 Search Bar Styling */
+.marketplace-search {
+  display: flex;
+  align-items: center;
+  width: 1050px; /*  Figma width */
+  height: 60px; /*  Figma height */
+  background: #2b2b2b;
+  border: 1px solid #3b3b3b;
+  border-radius: 20px;
+  padding: 0 20px;
+  gap: 10px;
+}
+
+.marketplace-search input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.marketplace-search input::placeholder {
+  color: #888;
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn img {
+  width: 22px;
+  height: 22px;
+}
