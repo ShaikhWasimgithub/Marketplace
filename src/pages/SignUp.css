@@ -1,5 +1,5 @@
 /* ============================= */
-/* 🖥️ Desktop Layout (Figma Specs) */
+/*  Desktop Layout (Figma Specs) */
 /* ============================= */
 .signup-container {
   display: flex;
@@ -10,7 +10,7 @@
   gap: 60px; /* exact figma spacing */
   overflow: hidden; /* no scrollbars */
   margin: 0 auto;
-  box-sizing: border-box; /* 🔥 removed auto-center so image touches left */
+  box-sizing: border-box;
 }
 
 /* Left Full Image */
@@ -76,7 +76,7 @@
   width: 330px;
   display: flex;
   flex-direction: column;
-  gap: 18px; /* 🔥 reduced gap (inputs & button closer) */
+  gap: 18px; /*  reduced gap (inputs & button closer) */
 }
 
 /* Input fields */
@@ -130,7 +130,7 @@
 }
 
 /* ============================= */
-/* 📱 Responsive Adjustments */
+/*  Responsive Adjustments */
 /* ============================= */
 
 /* Tablet (up to 1024px) */
@@ -153,7 +153,7 @@
     flex-direction: column;
     width: 100%;
     height: auto;
-    padding: 0; /* 🔥 no side padding per figma */
+    padding: 0; /*  no side padding per figma */
     gap: 30px; /* figma gap ~30px */
     align-items: center;
     justify-content: flex-start;
@@ -239,5 +239,108 @@
   .create-btn {
     font-size: 14px;
     border-radius: 12px;
+  }
+}
+
+/* ============================= */
+/* 📱 Tablet (Figma 834px spec)  */
+/* ============================= */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .signup-container {
+    width: 834px;
+    height: 615px;
+    gap: 40px;
+  }
+  .signup-image {
+    width: 397px;
+    height: 615px;
+  }
+  .signup-form {
+    width: 397px;
+    height: 615px;
+    padding: 80px 0;
+    gap: 40px;
+    align-items: flex-start;
+  }
+  .signup-form .text-block {
+    width: 325px;
+    gap: 20px;
+  }
+  .signup-form h1 {
+    font-size: 38px;
+    line-height: 120%; /* 46px */
+  }
+  .signup-form .subtitle {
+    font-size: 16px;
+    line-height: 140%; /* 22px */
+  }
+  .form {
+    width: 325px;
+    gap: 30px;
+  }
+  .input-box {
+    width: 325px;
+    height: 46px;
+    padding: 16px 20px;
+  }
+  .create-btn {
+    width: 325px;
+    height: 46px;
+    font-size: 16px;
+  }
+}
+
+/* ============================= */
+/* 📱 Mobile (Figma 375px spec) */
+/* ============================= */
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    gap: 30px;
+    align-items: center;
+  }
+  .signup-image,
+  .signup-image img {
+    width: 375px;
+    height: 232px;
+    object-fit: cover;
+  }
+  .signup-form {
+    width: 315px;
+    padding: 30px 0 40px;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+  }
+  .signup-form .text-block {
+    width: 315px;
+    gap: 20px;
+  }
+  .signup-form h1 {
+    font-size: 38px;
+    line-height: 120%;
+    text-align: left;
+  }
+  .signup-form .subtitle {
+    font-size: 16px;
+    line-height: 140%;
+    text-align: left;
+  }
+  .form {
+    width: 315px;
+    gap: 30px;
+  }
+  .input-box {
+    width: 315px;
+    height: 46px;
+    padding: 16px 20px;
+  }
+  .create-btn {
+    width: 315px;
+    height: 46px;
+    font-size: 16px;
   }
 }

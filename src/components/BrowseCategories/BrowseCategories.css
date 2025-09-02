@@ -186,3 +186,90 @@
     text-align: left;
   }
 }
+
+/* Tablet (Figma specs: 834px frame, 690px content) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .browse-section {
+    padding: 40px 0; /* Figma exact */
+    gap: 40px;
+    background: #2b2b2b;
+    width: 100%;
+  }
+
+  /* Header */
+  .browse-header {
+    max-width: 690px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .browse-header h3 {
+    font-size: 28px; /* Figma */
+    line-height: 140%;
+    font-weight: 600;
+    color: #fff;
+    text-align: left;
+    margin: 0;
+  }
+
+  /* Grid */
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cards in a row */
+    gap: 30px; /* Figma */
+    max-width: 690px; /* frame inside */
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Card */
+  .category-card {
+    width: 150px; /* Figma */
+    height: 209px; /* Figma */
+    background: #3b3b3b;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .category-image {
+    width: 150px;
+    height: 142px;
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: relative;
+  }
+
+  /* Overlay */
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(7.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .category-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  /* Card title */
+  .category-name {
+    padding: 20px 20px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 140%;
+    color: #fff;
+    text-transform: capitalize;
+    text-align: left;
+  }
+}

@@ -150,13 +150,90 @@
   }
 
   .desktop-only {
-    display: none; /* hide desktop button */
+    display: none !important; /* hide top button */
+    /* hide desktop button */
   }
   .mobile-only {
-    display: flex; /*  show mobile button */
+    display: inline-flex !important; /* show bottom button */
+    /*  show mobile button */
     width: 100%;
     justify-content: center;
     margin-top: 20px;
     height: 50px;
+  }
+}
+
+/* Tablet (601px – 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .discover-section {
+    padding: 40px 72px 80px;
+    background: #2b2b2b;
+    max-width: 834px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .discover-header {
+    width: 100%;
+    max-width: 690px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between; /* Title left, Button right */
+    margin: 0 auto 40px auto;
+  }
+
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* left aligned */
+    gap: 10px;
+  }
+
+  .view-all-btn {
+    width: 187px;
+    height: 60px;
+    border: 2px solid #a259ff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: transparent;
+    flex-shrink: 0;
+  }
+
+  /*  Tablet me bottom button hide */
+  .mobile-only {
+    display: none !important;
+  }
+
+  /* NFT Grid */
+  .nft-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 330px);
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 690px;
+    margin: 0 auto;
+  }
+
+  .nft-card {
+    width: 330px;
+    height: 469px;
+    background: #3b3b3b;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nft-card:nth-child(n + 3) {
+    display: none; /* Sirf 2 cards show tablet me */
   }
 }

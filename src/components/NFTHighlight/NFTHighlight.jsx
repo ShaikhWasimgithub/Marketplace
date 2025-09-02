@@ -87,7 +87,7 @@ const NFTHighlight = () => {
               alt="Dish Studio"
               className="artist-avatar"
             />
-            <span className="artist-name">Dish Studio</span>
+            <span className="artist-name">Shroomie</span>
           </div>
 
           {/* Title */}

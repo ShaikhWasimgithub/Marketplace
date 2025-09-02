@@ -243,3 +243,128 @@
     text-align: left;
   }
 }
+/* ================================
+   Tablet Layout (601px – 1024px)
+   Figma reference: 834px width
+================================== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .how-it-works {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 195px; /* figma */
+    gap: 40px;
+    width: 100%;
+    max-width: 834px; /* figma */
+    height: 528px; /* figma */
+    background: #2b2b2b;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* Section Header */
+  .how-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 690px;
+    height: 71px;
+  }
+
+  .how-header h3 {
+    width: 690px;
+    height: 39px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    font-size: 28px; /* figma */
+    line-height: 140%; /* 39px */
+    text-transform: capitalize;
+    color: #fff;
+    margin: 0;
+    text-align: left;
+  }
+
+  .how-header p {
+    width: 690px;
+    height: 22px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px; /* figma */
+    line-height: 140%; /* 22px */
+    color: #fff;
+    margin: 0;
+    text-align: left;
+  }
+
+  /* Cards Container */
+  .how-cards {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+    width: 690px; /* figma */
+    height: 337px; /* figma */
+  }
+
+  /* Individual Card */
+  .how-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px 30px;
+    gap: 20px;
+    width: 210px; /* figma */
+    height: 337px; /* figma */
+    background: #3b3b3b;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+
+  /* Card Icon */
+  .card-icon {
+    width: 160px; /* figma */
+    height: 160px; /* figma */
+  }
+
+  .how-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Card Details */
+  .card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 170px; /* figma */
+    height: auto;
+    text-align: center;
+  }
+
+  .how-card h4 {
+    width: 170px;
+    height: 22px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px; /* figma */
+    line-height: 140%; /* 22px */
+    text-align: center;
+    color: #fff;
+    margin: 0;
+  }
+
+  .how-card p {
+    width: 170px;
+    height: auto;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    font-size: 12px; /* figma */
+    line-height: 140%; /* 17px */
+    text-align: center;
+    color: #fff;
+    margin: 0;
+  }
+}

@@ -257,3 +257,162 @@
     line-height: 140%;
   }
 }
+
+/* Tablet (Portrait/Landscape: 601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .trending {
+    padding: 40px 0;
+    gap: 40px;
+    width: 100%;
+    max-width: 834px; /* As per Figma tablet frame */
+    margin: 0 auto;
+    height: 716px; /* Fix exact height */
+    background: #2b2b2b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Headline */
+  .trending-headline {
+    width: 690px; /* Figma width */
+    height: 71px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .trending-title {
+    width: 690px;
+    height: 39px;
+    font-size: 28px;
+    line-height: 140%;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0;
+    color: #fff;
+  }
+
+  .trending-sub {
+    width: 690px;
+    height: 22px;
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 400;
+    margin: 0;
+    color: #fff;
+  }
+
+  /* Collection Row → 2 cards side by side */
+  .collection-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Only 2 cards */
+    gap: 30px;
+    width: 690px; /* From Figma */
+    height: 525px; /* Fix height */
+    overflow: visible;
+  }
+
+  .collection-card {
+    width: 330px;
+    height: 525px;
+    gap: 15px;
+    border-radius: 20px;
+    background: #2b2b2b;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Photos Block */
+  .photos {
+    width: 330px;
+    height: 445px;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .primary {
+    width: 330px;
+    height: 330px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  .secondary-row {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 330px;
+    height: 100px;
+  }
+
+  .secondary-row img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  .count {
+    width: 100px;
+    height: 100px;
+    background: #a259ff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-size: 22px;
+    color: #fff;
+  }
+
+  /* Info Block */
+  .info {
+    width: 330px;
+    height: 65px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info h5 {
+    width: 330px;
+    height: 31px;
+    font-size: 22px;
+    line-height: 140%;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
+  }
+
+  .artist {
+    width: 330px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .artist img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .artist span {
+    width: auto;
+    font-size: 16px;
+    line-height: 140%;
+    color: #fff;
+  }
+}
+/* Tablet: hide 3rd card */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .collection-card:nth-child(n + 3) {
+    display: none;
+  }
+}

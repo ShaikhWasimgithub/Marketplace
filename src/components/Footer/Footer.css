@@ -225,3 +225,122 @@
     margin-top: 10px;
   }
 }
+/* ====== TABLET FOOTER (Figma 834px) ====== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer {
+    width: 100%;
+    height: auto;
+    padding: 40px 0; /* top-bottom only */
+    gap: 49px;
+    background: #3b3b3b;
+    margin: 0;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  /* Inner container aligned with figma width */
+  .footer-info,
+  .footer-divider,
+  .footer-copy {
+    width: 100%;
+    max-width: 834px; /* full tablet frame */
+    margin: 0 auto; /* center inside footer */
+    box-sizing: border-box;
+  }
+
+  /* Top Section */
+  .footer-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 0;
+  }
+
+  /* NFT Marketplace Info */
+  .footer-col {
+    width: 100%;
+    max-width: 690px;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    width: 243.41px;
+    height: 32px;
+  }
+
+  .footer-text {
+    font-size: 16px;
+    line-height: 140%;
+    color: #cccccc;
+  }
+
+  .footer-community {
+    gap: 15px;
+  }
+
+  .footer-icons {
+    gap: 10px;
+    width: 158px;
+    height: 32px;
+  }
+
+  .footer-icons img {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Explore */
+  .footer-title {
+    font-size: 22px;
+    line-height: 160%; /* 35px */
+    text-transform: capitalize;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+
+  .footer-links li {
+    font-size: 16px;
+    line-height: 140%; /* 22px */
+  }
+
+  /* Subscribe Section */
+  .footer-form {
+    flex-direction: row;
+    width: 420px; /* exact from figma */
+    height: 60px;
+    padding: 16px 0 16px 20px;
+    border-radius: 20px;
+    background: #fff;
+    gap: 12px;
+  }
+
+  .footer-input {
+    font-size: 16px;
+    line-height: 140%;
+    color: #2b2b2b;
+  }
+
+  .footer-button {
+    width: 179px;
+    height: 60px;
+    padding: 0 50px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  /* Divider */
+  .footer-divider {
+    border: 1px solid #858584;
+  }
+
+  /* Copy text */
+  .footer-copy {
+    font-size: 12px;
+    line-height: 110%;
+    color: #cccccc;
+    text-align: left;
+  }
+}

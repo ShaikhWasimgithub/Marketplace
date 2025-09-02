@@ -213,7 +213,7 @@
     margin-bottom: 15px;
   }
 
-  /* ✅ TIMER comes directly below title */
+  /*  TIMER comes directly below title */
   .highlight-timer {
     order: 2;
     width: 315px;
@@ -261,7 +261,7 @@
     margin-bottom: 0;
   }
 
-  /* ✅ BUTTON is at very bottom */
+  /*  BUTTON is at very bottom */
   .highlight-btn {
     order: 3;
     width: 315px;
@@ -311,5 +311,114 @@
 
   .timer-colon {
     font-size: 24px;
+  }
+}
+
+/* ================================
+   Tablet (Figma specs: 834px wide)
+================================== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nft-hero {
+    width: 100vw;
+    min-height: 630px; /* figma height */
+  }
+
+  .hero-content {
+    max-width: 834px; /* figma width */
+    padding: 0 72px 60px; /* 72px side gap + 60px bottom */
+    min-height: 630px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* content centered */
+    align-items: flex-end;
+    gap: 40px; /* gap between left and timer */
+  }
+
+  /* LEFT SIDE */
+  .highlight-left {
+    width: 375px; /* figma width */
+    height: 210px; /* figma height */
+    gap: 30px;
+  }
+
+  .artist-card {
+    width: 151px;
+    height: 44px;
+    padding: 10px 20px;
+    gap: 12px;
+  }
+
+  .artist-avatar {
+    width: 24px;
+    height: 24px;
+  }
+
+  .artist-name {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .highlight-title {
+    width: 375px;
+    height: 46px;
+    font-size: 38px;
+    line-height: 120%;
+  }
+
+  .highlight-btn {
+    width: 198px;
+    height: 60px;
+    padding: 22px 50px;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  /* RIGHT SIDE (TIMER) */
+  .highlight-timer {
+    width: 295px;
+    height: 144px;
+    padding: 30px;
+    border-radius: 20px;
+    gap: 10px;
+  }
+
+  .timer-label {
+    width: 235px;
+    font-size: 12px;
+    line-height: 110%;
+    margin: 0;
+  }
+
+  .timer-values {
+    width: 235px;
+    height: 61px;
+    gap: 10px;
+  }
+
+  .timer-box {
+    width: 53px;
+    height: 61px;
+    align-items: flex-start;
+  }
+
+  .time-value {
+    font-size: 38px;
+    line-height: 120%;
+    width: 53px;
+    height: 46px;
+  }
+
+  .time-label {
+    font-size: 12px;
+    line-height: 110%;
+    width: 53px;
+    height: 10px;
+  }
+
+  .timer-colon {
+    width: 18px;
+    height: 39px;
+    font-size: 28px;
+    line-height: 140%;
   }
 }

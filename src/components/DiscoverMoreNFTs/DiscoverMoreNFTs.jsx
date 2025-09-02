@@ -34,7 +34,7 @@ export default function DiscoverMoreNFTs() {
           <h2>Discover More NFTs</h2>
           <p className="sub-text">Explore new trending NFTs</p>
         </div>
-        {/* Desktop Button */}
+        {/* Desktop + Tablet Button */}
         <button className="view-all-btn desktop-only">
           <img src="/icons/eye.png" alt="eye" />
           View All
@@ -67,7 +67,7 @@ export default function DiscoverMoreNFTs() {
         ))}
       </div>
 
-      {/* Mobile Button */}
+      {/* Mobile Only Button */}
       <button className="view-all-btn mobile-only">
         <img src="/icons/eye.png" alt="eye" />
         View All

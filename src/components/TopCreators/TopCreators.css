@@ -277,3 +277,157 @@
     height: 20px;
   }
 }
+/* =============== TABLET FIX =============== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .top-creators-section {
+    padding: 40px 32px;
+    max-width: 834px;
+    margin: 0 auto;
+  }
+
+  /* Header section */
+  .top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    max-width: 690px;
+    margin: 0 auto 40px;
+    gap: 40px;
+  }
+
+  .top-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 39px;
+    color: #fff;
+  }
+
+  .top-header p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #fff;
+  }
+  @media (min-width: 601px) and (max-width: 1024px) {
+    /* Show only first 6 creators */
+    .creator-card:nth-child(n + 7) {
+      display: none;
+    }
+  }
+  /* Button same size as design */
+  .ranking-btn {
+    width: 247px;
+    height: 60px;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    border: 2px solid #a259ff;
+    border-radius: 20px;
+    background: transparent;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Grid: 2 columns × 3 rows */
+  .creators-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 690px;
+    margin: 0 auto;
+  }
+
+  .creator-card {
+    width: 330px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    background: #3b3b3b;
+    border-radius: 20px;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  /* Avatar */
+  .creator-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Rank badge overlay */
+  .creator-rank {
+    position: absolute;
+    top: 13px;
+    left: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background: #2b2b2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Space Mono", monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #858584;
+    line-height: 1;
+    z-index: 2;
+  }
+
+  /* Info section */
+  .creator-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    flex: 1;
+  }
+
+  .creator-info h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    color: #fff;
+    line-height: 31px;
+  }
+
+  .creator-sales {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .creator-sales p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #858584;
+    margin: 0;
+  }
+
+  .creator-sales strong {
+    font-family: "Space Mono", monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  /* Show all 6 cards */
+  .creator-card {
+    display: flex;
+  }
+}
