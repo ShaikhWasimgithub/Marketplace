@@ -105,10 +105,16 @@
 .creator-card strong {
   color: #fff;
 }
+.desktop-tablet {
+  display: flex;
+}
+.mobile-only {
+  display: none;
+}
 
 /* ================= RESPONSIVE ================= */
 /* ================= MOBILE FIX ================= */
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .top-creators-section {
     padding: 40px 16px;
     border-radius: 0;
@@ -277,157 +283,134 @@
     height: 20px;
   }
 }
-/* =============== TABLET FIX =============== */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (max-width: 767px) {
+  .desktop-tablet {
+    display: none; /* desktop/tablet button hide on mobile */
+  }
+  .mobile-only {
+    display: flex; /* mobile button show */
+  }
+}
+
+/* ================= TABLET RESPONSIVE ================= */
+@media (min-width: 768px) and (max-width: 1024px) {
   .top-creators-section {
-    padding: 40px 32px;
-    max-width: 834px;
+    padding: 40px 0; /* left/right padding  */
+    max-width: 834px; /* Tablet container */
     margin: 0 auto;
   }
 
-  /* Header section */
+  /* Header */
   .top-header {
+    width: 100%;
+    margin: 0 auto 40px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-    max-width: 690px;
-    margin: 0 auto 40px;
-    gap: 40px;
+    align-items: center;
+    gap: 20px;
   }
 
-  .top-header h2 {
+  .top-header-left {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: none;
+    margin-left: 0;
+    gap: 8px; /*  left corner  stick */
+  }
+
+  .top-header-left h2 {
     font-size: 28px;
     font-weight: 600;
-    line-height: 39px;
-    color: #fff;
+    margin-bottom: 8px;
+    text-align: left;
   }
 
-  .top-header p {
+  .top-header-left p {
     font-size: 16px;
-    font-weight: 400;
     line-height: 22px;
     color: #fff;
+    text-align: left;
   }
-  @media (min-width: 601px) and (max-width: 1024px) {
-    /* Show only first 6 creators */
-    .creator-card:nth-child(n + 7) {
-      display: none;
-    }
-  }
-  /* Button same size as design */
-  .ranking-btn {
+
+  /*  ensure button visible & right aligned */
+  .ranking-btn.desktop-tablet {
+    display: flex;
     width: 247px;
     height: 60px;
-    padding: 0;
     font-size: 16px;
-    font-weight: 600;
-    line-height: 22px;
     border: 2px solid #a259ff;
     border-radius: 20px;
     background: transparent;
     color: #fff;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 12px;
+    flex-shrink: 0;
+    margin-left: auto; /*  push to extreme right */
+    margin-right: 0; /*  stick with right edge */
   }
 
-  /* Grid: 2 columns × 3 rows */
+  /* Grid */
   .creators-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
     gap: 30px;
-    width: 100%;
-    max-width: 690px;
+    max-width: 834px;
     margin: 0 auto;
+    justify-content: center;
   }
 
   .creator-card {
     width: 330px;
     height: 100px;
-    display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    padding: 20px;
     gap: 20px;
-    background: #3b3b3b;
-    border-radius: 20px;
-    position: relative;
-    box-sizing: border-box;
+    padding: 20px;
   }
 
-  /* Avatar */
   .creator-img {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    object-fit: cover;
-    position: relative;
-    z-index: 1;
+    margin: 0;
   }
 
-  /* Rank badge overlay */
   .creator-rank {
-    position: absolute;
-    top: 13px;
-    left: 12px;
     width: 30px;
     height: 30px;
     border-radius: 20px;
-    background: #2b2b2b;
+    font-size: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Space Mono", monospace;
-    font-size: 16px;
-    font-weight: 400;
-    color: #858584;
-    line-height: 1;
-    z-index: 2;
   }
 
-  /* Info section */
-  .creator-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 5px;
-    flex: 1;
-  }
-
-  .creator-info h3 {
+  .creator-card h3 {
     font-size: 22px;
-    font-weight: 600;
-    margin: 0;
-    color: #fff;
-    line-height: 31px;
+    margin: 0 0 4px;
+    text-align: left;
   }
 
-  .creator-sales {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
-    align-items: center;
-  }
-
-  .creator-sales p {
+  .creator-card p {
     font-size: 16px;
-    font-weight: 400;
-    color: #858584;
+    text-align: left;
     margin: 0;
   }
 
-  .creator-sales strong {
-    font-family: "Space Mono", monospace;
-    font-size: 16px;
-    font-weight: 400;
-    color: #fff;
+  /* Hide extra cards after 6 */
+  .creator-card:nth-child(n + 7) {
+    display: none;
   }
-
-  /* Show all 6 cards */
-  .creator-card {
-    display: flex;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .desktop-tablet {
+    display: flex; /* tablet me dikhe */
+  }
+  .mobile-only {
+    display: none;
   }
 }

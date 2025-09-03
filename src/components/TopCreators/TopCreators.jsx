@@ -15,7 +15,7 @@ import Avatar10 from "../../assets/creators/creator10.png";
 import Avatar11 from "../../assets/creators/creator11.png";
 import Avatar12 from "../../assets/creators/creator12.png";
 
-// Rocket icon (Figma export SVG)
+// Rocket icon
 import { Rocket } from "lucide-react";
 
 const creators = [
@@ -37,16 +37,18 @@ export default function TopCreators() {
   return (
     <div className="top-creators-section">
       <div className="top-header">
-        <div className="top-headline">
+        <div className="top-header-left">
           <h2>Top Creators</h2>
-          <p>Checkout Top Rated Creators On The Nft Marketplace</p>
+          <p>Checkout Top Rated Creators On The NFT Marketplace</p>
         </div>
-        {/* Button stays here for desktop */}
-        <button className="ranking-btn desktop-only">
+
+        {/* Desktop + Tablet button */}
+        <button className="ranking-btn desktop-tablet">
           <Rocket size={18} className="rocket-icon" />
           View Rankings
         </button>
       </div>
+
       <div className="creators-grid">
         {creators.map((creator, index) => (
           <div key={creator.id} className="creator-card">
@@ -67,7 +69,8 @@ export default function TopCreators() {
           </div>
         ))}
       </div>
-      {/* Button for mobile - only visible <600px */}
+
+      {/* Mobile button */}
       <button className="ranking-btn mobile-only">
         <Rocket size={18} className="rocket-icon" />
         View Rankings

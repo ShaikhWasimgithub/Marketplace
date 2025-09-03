@@ -104,7 +104,7 @@
 }
 
 /* Mobile (≤768px) */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .discover-section {
     padding: 40px 20px 60px;
   }
@@ -162,63 +162,77 @@
     height: 50px;
   }
 }
+/* Tablet (iPad Mini / Air / Pro) */
 
-/* Tablet (601px – 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .discover-section {
     padding: 40px 72px 80px;
     background: #2b2b2b;
-    max-width: 834px;
-    margin: 0 auto;
   }
 
-  /* Header */
+  /* Header row aligned with card grid */
   .discover-header {
-    width: 100%;
-    max-width: 690px;
-    height: auto;
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between; /* Title left, Button right */
-    margin: 0 auto 40px auto;
+    justify-content: space-between; /* title left + button right */
+    align-items: flex-start; /* button top aligned */
+    max-width: 1024px; /* same width as grid */
+    margin: 0 auto 40px auto; /* center align whole header */
+    gap: 40px; /*  extra gap between title & button */
   }
 
-  .header-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* left aligned */
-    gap: 10px;
+  /* Text left aligned with grid */
+  .header-texts {
+    flex: 1;
+    text-align: left;
   }
 
-  .view-all-btn {
+  .discover-header h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 140%;
+    margin: 0 0 8px 0;
+  }
+
+  .discover-header p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    color: #fff;
+    margin: 0;
+  }
+
+  /* Button styling */
+  .discover-section .view-all-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
     width: 187px;
     height: 60px;
     border: 2px solid #a259ff;
     border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
     font-size: 16px;
     font-weight: 600;
     color: #fff;
     background: transparent;
+    transition: 0.3s;
     flex-shrink: 0;
+    margin-left: 0; /* ✅ prevent button from squeezing */
   }
 
-  /*  Tablet me bottom button hide */
-  .mobile-only {
-    display: none !important;
+  .discover-section .view-all-btn img {
+    margin-right: 8px;
   }
 
-  /* NFT Grid */
+  .discover-section .view-all-btn:hover {
+    background: #a259ff;
+  }
+
+  /* NFT cards grid – 2 per row */
   .nft-grid {
     display: grid;
-    grid-template-columns: repeat(2, 330px);
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    width: 100%;
     max-width: 690px;
     margin: 0 auto;
   }
@@ -228,12 +242,36 @@
     height: 469px;
     background: #3b3b3b;
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+  }
+
+  .nft-image {
+    width: 100%;
+    height: 295px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .nft-info {
+    padding: 20px 30px 25px;
+    gap: 25px;
     display: flex;
     flex-direction: column;
   }
 
-  .nft-card:nth-child(n + 3) {
-    display: none; /* Sirf 2 cards show tablet me */
+  /* Hide 3rd card only on tablet */
+  .nft-card:nth-child(3) {
+    display: none;
+  }
+
+  /*  Only DiscoverNFTs buttons toggle */
+  .discover-section .desktop-only {
+    display: flex;
+  }
+
+  .discover-section .mobile-only {
+    display: none;
   }
 }

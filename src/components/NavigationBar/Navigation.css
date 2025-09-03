@@ -358,13 +358,14 @@ body {
     height: 20px;
   }
 }
-
 /* Tablet Responsive Navigation */
 @media (min-width: 768px) and (max-width: 1024px) {
   .nav {
-    width: 834px; /* Figma se exact */
+    width: 100%; /* */
+    max-width: 834px; /* Figma max width lock */
     height: 54px;
     padding: 15px 50px;
+    margin: 0 auto; /* center horizontally */
     background: #2b2b2b;
 
     display: flex;
@@ -380,20 +381,22 @@ body {
     align-items: center;
     gap: 10px;
 
-    width: 182.56px;
+    width: auto;
     height: 24px;
   }
 
   .logo {
     width: 24px;
     height: 24px;
+    flex-shrink: 0;
   }
 
   .brand {
     font-size: 14px;
+    font-weight: 600;
     line-height: 18px;
     color: #fff;
-    width: 150px;
+    white-space: nowrap; /* text break na ho */
   }
 
   /* Desktop menu hide in tablet */
@@ -404,11 +407,12 @@ body {
   /* Hamburger menu */
   .hamburger-btn {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     width: 24px;
     height: 24px;
     cursor: pointer;
+    flex-shrink: 0;
   }
 
   .hamburger-btn span {
@@ -417,5 +421,6 @@ body {
     height: 2px;
     margin: 4px 0;
     background: #fff;
+    border-radius: 2px;
   }
 }

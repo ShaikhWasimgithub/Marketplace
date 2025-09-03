@@ -257,26 +257,25 @@
     line-height: 140%;
   }
 }
-
-/* Tablet (Portrait/Landscape: 601px - 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
+/* Tablet (Portrait/Landscape: 768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .trending {
-    padding: 40px 0;
-    gap: 40px;
     width: 100%;
-    max-width: 834px; /* As per Figma tablet frame */
+    max-width: 834px; /* Frame width from Figma */
     margin: 0 auto;
-    height: 716px; /* Fix exact height */
+    padding: 40px 0;
     background: #2b2b2b;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
+    height: 716px; /* Exact from Figma */
+    box-sizing: border-box;
   }
 
-  /* Headline */
+  /* Headline block */
   .trending-headline {
     width: 690px; /* Figma width */
-    height: 71px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -285,52 +284,53 @@
 
   .trending-title {
     width: 690px;
-    height: 39px;
-    font-size: 28px;
-    line-height: 140%;
+    font-family: "Work Sans", sans-serif;
     font-weight: 600;
+    font-size: 28px;
+    line-height: 39px; /* 140% */
     text-transform: capitalize;
-    margin: 0;
     color: #fff;
+    margin: 0;
   }
 
   .trending-sub {
     width: 690px;
-    height: 22px;
-    font-size: 16px;
-    line-height: 140%;
+    font-family: "Work Sans", sans-serif;
     font-weight: 400;
-    margin: 0;
+    font-size: 16px;
+    line-height: 22px;
     color: #fff;
+    margin: 0;
   }
 
-  /* Collection Row → 2 cards side by side */
+  /* Collection Grid - only 2 cards */
   .collection-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Only 2 cards */
+    grid-template-columns: repeat(2, 330px);
     gap: 30px;
-    width: 690px; /* From Figma */
-    height: 525px; /* Fix height */
-    overflow: visible;
+    width: 690px; /* Figma width */
+    height: 525px;
+    overflow: hidden;
   }
 
   .collection-card {
     width: 330px;
     height: 525px;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
     border-radius: 20px;
     background: #2b2b2b;
-    display: flex;
-    flex-direction: column;
+    flex-shrink: 0;
   }
 
-  /* Photos Block */
+  /* Photos block */
   .photos {
-    width: 330px;
-    height: 445px;
-    gap: 15px;
     display: flex;
     flex-direction: column;
+    gap: 15px;
+    width: 330px;
+    height: 445px;
   }
 
   .primary {
@@ -366,34 +366,35 @@
     font-family: "Space Mono", monospace;
     font-weight: 700;
     font-size: 22px;
+    line-height: 35px;
     color: #fff;
   }
 
-  /* Info Block */
+  /* Info block */
   .info {
     width: 330px;
     height: 65px;
-    gap: 10px;
     display: flex;
     flex-direction: column;
+    gap: 10px;
   }
 
   .info h5 {
-    width: 330px;
-    height: 31px;
-    font-size: 22px;
-    line-height: 140%;
+    font-family: "Work Sans", sans-serif;
     font-weight: 600;
-    margin: 0;
+    font-size: 22px;
+    line-height: 31px;
     color: #fff;
+    margin: 0;
+    text-transform: capitalize;
   }
 
   .artist {
-    width: 330px;
-    height: 24px;
     display: flex;
     align-items: center;
     gap: 12px;
+    width: 330px;
+    height: 24px;
   }
 
   .artist img {
@@ -404,14 +405,14 @@
   }
 
   .artist span {
-    width: auto;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 140%;
+    line-height: 22px;
     color: #fff;
   }
-}
-/* Tablet: hide 3rd card */
-@media (min-width: 601px) and (max-width: 1024px) {
+
+  /* Hide 3rd+ cards on tablet */
   .collection-card:nth-child(n + 3) {
     display: none;
   }

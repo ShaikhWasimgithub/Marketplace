@@ -271,7 +271,7 @@
   font-size: 16px;
   color: var(--text);
 }
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .hero {
     padding: 40px 0;
     background: #2b2b2b;
@@ -386,9 +386,8 @@
     color: #fff;
   }
 }
-
-/* Tablet (Portrait / Landscape ~ 601px - 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
+/* Tablet (iPad Mini 768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .hero {
     display: flex;
     justify-content: center;
@@ -396,45 +395,39 @@
     padding: 80px 0;
     background: #2b2b2b;
     width: 100%;
+    max-width: 834px; /* Figma max width */
     min-height: 541px; /* Figma height */
+    margin: 0 auto;
     box-sizing: border-box;
   }
 
-  /* Hero Frame (Main Container) */
+  /* Hero Frame (Text + Card Container) */
   .hero__frame {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
-    width: 690px; /*  Figma width */
+    width: 690px; /* Figma width */
     max-width: 100%;
-    height: 381px; /*  Exact Figma height */
+    height: 381px; /* Figma height */
   }
 
-  /* Left Section (Text + CTA + Stats) */
+  /* Left Side (Text + CTA + Stats) */
   .hero__left {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    gap: 30px;
-    width: 330px; /*  Exact Figma */
+    gap: 20px;
+    width: 330px; /* Figma exact */
     height: 100%;
   }
 
-  /* Text Block */
-  .hero__textblock {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-  }
-
+  /* Headline + Subhead */
   .hero__title {
     font-family: "Work Sans", sans-serif;
     font-weight: 600;
     font-size: 38px;
-    line-height: 46px; /*  120% */
+    line-height: 46px; /* 120% */
     color: #fff;
     margin: 0;
     text-transform: capitalize;
@@ -444,7 +437,7 @@
     font-family: "Work Sans", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    line-height: 22px; /*  140% */
+    line-height: 22px; /* 140% */
     color: #fff;
     margin: 0;
   }
@@ -473,22 +466,22 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%; /* fill left column */
-    margin-top: auto; /* push to bottom */
+    width: 100%; /* full left column */
+    margin-top: auto; /* push stats bottom */
   }
 
   .hero__stat {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    width: 90px;
+    width: 90px; /* Figma width */
   }
 
   .hero__statValue {
     font-family: "Space Mono", monospace;
     font-weight: 700;
     font-size: 22px;
-    line-height: 35px; /*  160% */
+    line-height: 35px; /* 160% */
     color: #fff;
   }
 
@@ -500,12 +493,12 @@
     color: #fff;
   }
 
-  /* Right Section (NFT Card) */
+  /* Right Side (NFT Card) */
   .hero__card {
     display: flex;
     flex-direction: column;
-    width: 330px; /*  Figma width */
-    height: 381px; /*  Figma height */
+    width: 330px; /* Figma width */
+    height: 381px; /* Figma height */
     border-radius: 20px;
     overflow: hidden;
     background: #3b3b3b;
@@ -514,7 +507,7 @@
 
   .hero__imageWrap {
     width: 100%;
-    height: 221px; /*  exact */
+    height: 221px; /* exact Figma height */
     border-radius: 20px 20px 0 0;
     overflow: hidden;
   }
@@ -526,7 +519,7 @@
     padding: 20px;
     gap: 10px;
     width: 100%;
-    height: 160px; /*  Adjusted to match total 381px card height */
+    height: 160px; /* 381 - 221 = 160 */
     background: #3b3b3b;
     border-radius: 0 0 20px 20px;
     box-sizing: border-box;

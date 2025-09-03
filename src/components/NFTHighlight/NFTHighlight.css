@@ -314,111 +314,70 @@
   }
 }
 
-/* ================================
-   Tablet (Figma specs: 834px wide)
-================================== */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Tablet ( 768px–1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .nft-hero {
-    width: 100vw;
-    min-height: 630px; /* figma height */
+    min-height: 630px;
+    height: 630px;
   }
 
   .hero-content {
-    max-width: 834px; /* figma width */
-    padding: 0 72px 60px; /* 72px side gap + 60px bottom */
-    min-height: 630px;
     display: flex;
-    flex-direction: row;
-    justify-content: center; /* content centered */
-    align-items: flex-end;
-    gap: 40px; /* gap between left and timer */
+    flex-direction: row; /* left + right */
+    align-items: flex-end; /* timer bottom align */
+    justify-content: space-between;
+    padding: 360px 60px 60px;
+    max-width: 834px;
+    margin: 0 auto;
+    min-height: 630px;
   }
 
-  /* LEFT SIDE */
+  /* Left Section */
   .highlight-left {
-    width: 375px; /* figma width */
-    height: 210px; /* figma height */
-    gap: 30px;
+    display: flex;
+    flex-direction: column; /* avatar → title → button */
+    align-items: flex-start; /* left align, not center */
+    gap: 20px;
+    width: 375px;
   }
 
-  .artist-card {
-    width: 151px;
-    height: 44px;
-    padding: 10px 20px;
-    gap: 12px;
-  }
-
-  .artist-avatar {
-    width: 24px;
-    height: 24px;
-  }
-
-  .artist-name {
-    font-size: 16px;
-    line-height: 140%;
+  .highlight-avatar {
+    margin-bottom: 10px; /* figma spacing */
   }
 
   .highlight-title {
-    width: 375px;
-    height: 46px;
     font-size: 38px;
     line-height: 120%;
+    text-align: left;
   }
 
   .highlight-btn {
     width: 198px;
     height: 60px;
-    padding: 22px 50px;
-    justify-content: center;
+    padding: 20px 40px;
     font-size: 16px;
+    justify-content: center;
+    align-self: flex-start; /* button left aligned */
   }
 
-  /* RIGHT SIDE (TIMER) */
+  .highlight-btn .btn-icon {
+    font-size: 20px;
+  }
+
+  /* Right Section */
   .highlight-timer {
     width: 295px;
     height: 144px;
     padding: 30px;
-    border-radius: 20px;
-    gap: 10px;
-  }
-
-  .timer-label {
-    width: 235px;
-    font-size: 12px;
-    line-height: 110%;
-    margin: 0;
-  }
-
-  .timer-values {
-    width: 235px;
-    height: 61px;
-    gap: 10px;
-  }
-
-  .timer-box {
-    width: 53px;
-    height: 61px;
-    align-items: flex-start;
+    align-self: flex-end; /* bottom me fix */
   }
 
   .time-value {
     font-size: 38px;
-    line-height: 120%;
-    width: 53px;
-    height: 46px;
-  }
-
-  .time-label {
-    font-size: 12px;
-    line-height: 110%;
-    width: 53px;
-    height: 10px;
   }
 
   .timer-colon {
-    width: 18px;
-    height: 39px;
     font-size: 28px;
-    line-height: 140%;
+    margin-bottom: 0;
   }
 }
